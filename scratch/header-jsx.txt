@@ -1,0 +1,65 @@
+<header id="masthead" className="site-header" role="banner" itemType="https://schema.org/WPHeader" itemScope={true}>
+	<div id="main-header" className="site-header-wrap">
+		<div className="site-header-inner-wrap">
+			<div className="site-header-upper-wrap">
+				<div className="site-header-upper-inner-wrap">
+					<div className="site-main-header-wrap site-header-row-container site-header-focus-item site-header-row-layout-standard kadence-sticky-header" data-section="kadence_customizer_header_main" data-shrink="false" data-reveal-scroll-up="false">
+	<div className="site-header-row-container-inner">
+				<div className="site-container">
+			<div className="site-main-header-inner-wrap site-header-row site-header-row-has-sides site-header-row-no-center">
+									<div className="site-header-main-section-left site-header-section site-header-section-left">
+						<div className="site-header-item site-header-focus-item" data-section="title_tagline">
+	<div className="site-branding branding-layout-standard site-brand-logo-only"><Link href="/"  className="brand has-logo-image"  rel="home"><img width="900" height="782" src="/wp-content/uploads/2024/10/logo-with-name.png" className="custom-logo" alt="Uplift Home Care logo" decoding="async" fetchPriority="high" srcSet="/wp-content/uploads/2024/10/logo-with-name.png 900w, /wp-content/uploads/2024/10/logo-with-name-300x261.png 300w, /wp-content/uploads/2024/10/logo-with-name-768x667.png 768w" sizes="(max-width: 900px) 100vw, 900px" /></Link></div></div>
+					</div>
+																	<div className="site-header-main-section-right site-header-section site-header-section-right">
+						<div className="site-header-item site-header-focus-item" data-section="kadence_customizer_header_button">
+	<div className="header-button-wrap"><div className="header-button-inner-wrap"><a href="tel:925-644-7472" target="_self" className="button header-button button-size-custom button-style-filled">Call: (925) 644-7472</a></div></div></div>
+<div className="site-header-item site-header-focus-item site-header-item-main-navigation header-navigation-layout-stretch-false header-navigation-layout-fill-stretch-false" data-section="kadence_customizer_primary_navigation">
+		<nav id="site-navigation" className="main-navigation header-navigation hover-to-open nav--toggle-sub header-navigation-style-underline header-navigation-dropdown-animation-none" role="navigation" aria-label="Primary">
+			<div className="primary-menu-container header-menu-container">
+	<ul id="primary-menu" className="menu"><li id="menu-item-400" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-400"><Link href="/"   aria-current="page">Home</Link></li>
+<li id="menu-item-401" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-401"><Link href="/services"  >Services</Link></li>
+<li id="menu-item-402" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-402"><Link href="/about"  >About</Link></li>
+<li id="menu-item-1101" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1101"><Link href="/faq"  >FAQ</Link></li>
+<li id="menu-item-403" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-403"><Link href="/careers"  >Careers</Link></li>
+<li id="menu-item-404" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-404"><Link href="/contact"  >Contact</Link></li>
+</ul>		</div>
+	</nav>
+	</div>
+					</div>
+							</div>
+		</div>
+	</div>
+</div>
+				</div>
+			</div>
+					</div>
+	</div>
+	
+<div id="mobile-header" className="site-mobile-header-wrap">
+	<div className="site-header-inner-wrap">
+		<div className="site-header-upper-wrap">
+			<div className="site-header-upper-inner-wrap">
+			<div className="site-main-header-wrap site-header-focus-item site-header-row-layout-standard site-header-row-tablet-layout-default site-header-row-mobile-layout-default ">
+	<div className="site-header-row-container-inner">
+		<div className="site-container">
+			<div className="site-main-header-inner-wrap site-header-row site-header-row-only-center-column site-header-row-center-column">
+													<div className="site-header-main-section-center site-header-section site-header-section-center">
+						<div className="site-header-item site-header-focus-item site-header-item-navgation-popup-toggle" data-section="kadence_customizer_mobile_trigger">
+		<div className="mobile-toggle-open-container">
+						<button id="mobile-toggle" className="menu-toggle-open drawer-toggle menu-toggle-style-default" aria-label="Open menu" data-toggle-target="#mobile-drawer" data-toggle-body-class="showing-popup-drawer-from-right" aria-expanded="false" data-set-focus=".menu-toggle-close">
+						<span className="menu-toggle-icon"><span className="kadence-svg-iconset"><svg aria-hidden="true" className="kadence-svg-icon kadence-menu-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>Toggle Menu</title><path d="M3 13h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1zM3 7h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1zM3 19h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1z"></path>
+				</svg></span></span>
+		</button>
+	</div>
+	</div>
+					</div>
+											</div>
+		</div>
+	</div>
+</div>
+			</div>
+		</div>
+			</div>
+</div>
+</header>

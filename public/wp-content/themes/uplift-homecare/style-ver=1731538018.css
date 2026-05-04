@@ -1,0 +1,71 @@
+/*!
+Theme Name: Uplift Home Care
+Description: A Kadence child theme created for the Uplift Home Care website.
+Author: Elevate5
+Author URI: https://elevate5.com/
+Version: 1.0.0
+Template: kadence
+Text Domain: uplift-homecare
+*/
+
+/* Homepage
+-------------------------------------------------------------- */
+
+@media (max-width: 639px) {
+	.home .wp-block-kadence-advancedheading.break-highlight-on-mobile .kt-highlight {
+		display: block;
+	}
+}
+
+
+/* Site Header - Main Row
+-------------------------------------------------------------- */
+
+.site-main-header-wrap .site-header-row {
+	align-items: center;
+}
+
+.site-main-header-wrap .site-header-section-right {
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.site-main-header-wrap .site-header-section-right .site-header-item-main-navigation {
+	flex: 1 0 100%;
+	justify-content: flex-end;
+}
+
+
+/* Gravity Forms
+-------------------------------------------------------------- */
+
+#gform_wrapper_1 .gfield input[type="text"],
+#gform_wrapper_1 .gfield input[type="email"],
+#gform_wrapper_1 .gfield input[type="tel"],
+#gform_wrapper_1 .gfield select,
+#gform_wrapper_1 .gfield textarea {
+	border-color: #000000;
+	color: #000000;
+}
+
+#gform_wrapper_1 .gfield input[type="text"]::placeholder,
+#gform_wrapper_1 .gfield input[type="email"]::placeholder,
+#gform_wrapper_1 .gfield input[type="tel"]::placeholder,
+#gform_wrapper_1 .gfield textarea::placeholder {
+	color: #000000;
+}
+
+#gform_wrapper_1 .gform_footer {
+	justify-content: center;
+}
+
+#gform_wrapper_2 .gfield input[type="text"],
+#gform_wrapper_2 .gfield input[type="email"] {
+	border-color: #ffffff;
+	color: #000000;
+}
+
+#gform_wrapper_2 .gfield input[type="text"]::placeholder,
+#gform_wrapper_2 .gfield input[type="email"]::placeholder {
+	color: #000000;
+}
