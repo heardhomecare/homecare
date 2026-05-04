@@ -198,6 +198,27 @@ export function BlogDetail({ slug }: BlogDetailProps) {
                     })}
                   </div>
 
+                  {/* Social Share (Mobile Only) */}
+                  <div className="flex lg:hidden items-center justify-between gap-4 mt-12 pt-8 border-t border-[#332885]/10">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
+                      Share Story
+                    </span>
+                    <div className="flex gap-2">
+                      <button className="p-3 rounded-full bg-gray-50 text-gray-400 hover:bg-[#332885] hover:text-white transition-all">
+                        <Facebook className="w-4 h-4" />
+                      </button>
+                      <button className="p-3 rounded-full bg-gray-50 text-gray-400 hover:bg-[#332885] hover:text-white transition-all">
+                        <Twitter className="w-4 h-4" />
+                      </button>
+                      <button className="p-3 rounded-full bg-gray-50 text-gray-400 hover:bg-[#332885] hover:text-white transition-all">
+                        <Linkedin className="w-4 h-4" />
+                      </button>
+                      <button className="p-3 rounded-full bg-gray-50 text-gray-400 hover:bg-[#332885] hover:text-white transition-all">
+                        <LinkIcon className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+
                   {/* Related Blogs Section */}
                   {relatedPosts.length > 0 && (
                     <div className="mt-24 pt-20 border-t border-[#332885]/10">

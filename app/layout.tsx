@@ -8,6 +8,39 @@ export const viewport: Viewport = {
   minimumScale: 1,
 }
 
+export const metadata: Metadata = {
+  title: {
+    default: 'Heard Home Care • Trusted Senior Home Care',
+    template: '%s • Heard Home Care',
+  },
+  description: 'Compassionate and professional senior home care services in Central and Eastern North Carolina.',
+  icons: {
+    icon: '/Asset6.png',
+  },
+  openGraph: {
+    title: 'Heard Home Care • Trusted Senior Home Care',
+    description: 'Compassionate and professional senior home care services in Central and Eastern North Carolina.',
+    url: 'https://heardhomecare.com',
+    siteName: 'Heard Home Care',
+    images: [
+      {
+        url: '/logo-vertical-purple.png',
+        width: 1200,
+        height: 630,
+        alt: 'Heard Home Care Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Heard Home Care • Trusted Senior Home Care',
+    description: 'Compassionate and professional senior home care services in Central and Eastern North Carolina.',
+    images: ['/logo-vertical-purple.png'],
+  },
+}
+
 import { Providers } from '@/components/Providers'
 
 export default function RootLayout({

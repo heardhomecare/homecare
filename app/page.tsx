@@ -13,11 +13,6 @@ import ServiceArea from '@/components/home/ServiceArea';
 import Reviews from '@/components/home/Reviews';
 import GetStarted from '@/components/home/GetStarted';
 
-export const metadata: Metadata = {
-  title: 'Heard Home Care • Trusted Senior Home Care',
-  description: 'Compassionate and professional senior home care services in Central and Eastern North Carolina.',
-};
-
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-[var(--brand-cream)]">
