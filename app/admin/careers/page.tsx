@@ -5,13 +5,16 @@ import { Plus, Edit, Trash2, Loader2, Briefcase } from 'lucide-react'
 import { toast } from 'sonner'
 import { format } from 'date-fns'
 import JobModal from '@/components/admin/JobModal'
+import DeleteConfirmDialog from '@/components/admin/DeleteConfirmDialog'
 
 export default function CareersManagement() {
   const [jobs, setJobs] = useState<any[]>([])
   const [isLoading, setIsLoading] = useState(true)
-  const [isDeleting, setIsDeleting] = useState<string | null>(null)
+  const [isDeleting, setIsDeleting] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
   const [selectedJob, setSelectedJob] = useState<any>(null)
+  const [jobToDelete, setJobToDelete] = useState<string | null>(null)
 
   useEffect(() => {
     fetchJobs()
@@ -39,22 +42,29 @@ export default function CareersManagement() {
     setIsModalOpen(true)
   }
 
-  const handleDelete = async (id: string) => {
-    if (!confirm('Are you sure you want to delete this job listing?')) return
+  const handleDelete = (id: string) => {
+    setJobToDelete(id)
+    setIsDeleteDialogOpen(true)
+  }
+
+  const confirmDelete = async () => {
+    if (!jobToDelete) return
     
-    setIsDeleting(id)
+    setIsDeleting(true)
     try {
-      const res = await fetch(`/api/careers/${id}`, { method: 'DELETE' })
+      const res = await fetch(`/api/careers/${jobToDelete}`, { method: 'DELETE' })
       if (res.ok) {
         toast.success('Job listing deleted successfully')
-        setJobs(jobs.filter(j => j._id !== id))
+        setJobs(jobs.filter(j => j._id !== jobToDelete))
+        setIsDeleteDialogOpen(false)
       } else {
         toast.error('Failed to delete job')
       }
     } catch (error) {
       toast.error('An error occurred')
     } finally {
-      setIsDeleting(null)
+      setIsDeleting(false)
+      setJobToDelete(null)
     }
   }
 
@@ -120,11 +130,11 @@ export default function CareersManagement() {
                         </button>
                         <button 
                           onClick={() => handleDelete(job._id)}
-                          disabled={isDeleting === job._id}
+                          disabled={isDeleting && jobToDelete === job._id}
                           className="p-2.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all disabled:opacity-50"
                           title="Delete"
                         >
-                          {isDeleting === job._id ? <Loader2 className="animate-spin" size={18} /> : <Trash2 size={18} />}
+                          {isDeleting && jobToDelete === job._id ? <Loader2 className="animate-spin" size={18} /> : <Trash2 size={18} />}
                         </button>
                       </div>
                     </td>
@@ -157,6 +167,15 @@ export default function CareersManagement() {
         onClose={() => setIsModalOpen(false)}
         onSuccess={fetchJobs}
         job={selectedJob}
+      />
+
+      <DeleteConfirmDialog 
+        isOpen={isDeleteDialogOpen}
+        onClose={() => setIsDeleteDialogOpen(false)}
+        onConfirm={confirmDelete}
+        isLoading={isDeleting}
+        title="Delete Job Posting"
+        description="Are you sure you want to delete this job posting? This action will permanently remove the listing and any associated data."
       />
     </div>
   )

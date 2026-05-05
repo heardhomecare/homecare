@@ -5,13 +5,16 @@ import { Plus, Edit, Trash2, Loader2, Search, X, FileText } from 'lucide-react'
 import { toast } from 'sonner'
 import { format } from 'date-fns'
 import BlogModal from '@/components/admin/BlogModal'
+import DeleteConfirmDialog from '@/components/admin/DeleteConfirmDialog'
 
 export default function BlogsManagement() {
   const [blogs, setBlogs] = useState<any[]>([])
   const [isLoading, setIsLoading] = useState(true)
-  const [isDeleting, setIsDeleting] = useState<string | null>(null)
+  const [isDeleting, setIsDeleting] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
   const [selectedBlog, setSelectedBlog] = useState<any>(null)
+  const [blogToDelete, setBlogToDelete] = useState<string | null>(null)
 
   useEffect(() => {
     fetchBlogs()
@@ -39,22 +42,29 @@ export default function BlogsManagement() {
     setIsModalOpen(true)
   }
 
-  const handleDelete = async (id: string) => {
-    if (!confirm('Are you sure you want to delete this post?')) return
+  const handleDelete = (id: string) => {
+    setBlogToDelete(id)
+    setIsDeleteDialogOpen(true)
+  }
+
+  const confirmDelete = async () => {
+    if (!blogToDelete) return
     
-    setIsDeleting(id)
+    setIsDeleting(true)
     try {
-      const res = await fetch(`/api/blogs/${id}`, { method: 'DELETE' })
+      const res = await fetch(`/api/blogs/${blogToDelete}`, { method: 'DELETE' })
       if (res.ok) {
         toast.success('Blog deleted successfully')
-        setBlogs(blogs.filter(b => b._id !== id))
+        setBlogs(blogs.filter(b => b._id !== blogToDelete))
+        setIsDeleteDialogOpen(false)
       } else {
         toast.error('Failed to delete blog')
       }
     } catch (error) {
       toast.error('An error occurred')
     } finally {
-      setIsDeleting(null)
+      setIsDeleting(false)
+      setBlogToDelete(null)
     }
   }
 
@@ -123,11 +133,11 @@ export default function BlogsManagement() {
                         </button>
                         <button 
                           onClick={() => handleDelete(blog._id)}
-                          disabled={isDeleting === blog._id}
+                          disabled={isDeleting && blogToDelete === blog._id}
                           className="p-2.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all disabled:opacity-50"
                           title="Delete"
                         >
-                          {isDeleting === blog._id ? <Loader2 className="animate-spin" size={18} /> : <Trash2 size={18} />}
+                          {isDeleting && blogToDelete === blog._id ? <Loader2 className="animate-spin" size={18} /> : <Trash2 size={18} />}
                         </button>
                       </div>
                     </td>
@@ -160,6 +170,15 @@ export default function BlogsManagement() {
         onClose={() => setIsModalOpen(false)}
         onSuccess={fetchBlogs}
         blog={selectedBlog}
+      />
+
+      <DeleteConfirmDialog 
+        isOpen={isDeleteDialogOpen}
+        onClose={() => setIsDeleteDialogOpen(false)}
+        onConfirm={confirmDelete}
+        isLoading={isDeleting}
+        title="Delete Blog Post"
+        description="Are you sure you want to delete this blog post? This action will permanently remove the article from your website."
       />
     </div>
   )
