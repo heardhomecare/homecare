@@ -66,14 +66,11 @@ const MissionSection: React.FC = () => {
                                     <h4 className="text-sm font-bold uppercase tracking-[0.25em] text-[var(--brand-green)]">About Me</h4>
                                 </div>
                                 <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
-                                    <p className="italic font-medium text-gray-900 border-l-4 border-[#332885] pl-6 py-2">
-                                        "In 2018, I founded the national nonprofit I&apos;m Heard to combat mental health stigma in underserved communities. I&apos;ve since authored three books on the topic and spoken worldwide."
+                                    <p>
+                                        Prior to founding Heard Home Care, Kala Omeiza spent over a decade working directly with older adults and individuals living with dementia, developmental disabilities, and mental health challenges, including clinical roles at <strong className="text-gray-900">Duke University Hospital</strong>, a <strong className="text-gray-900">Harvard Medical School–affiliated hospital</strong>, and the <strong className="text-gray-900">International Fellowship of Evangelical Students</strong>.
                                     </p>
                                     <p>
-                                        Prior to founding Heard Home Care, I spent over a decade working directly with older adults and individuals living with dementia, developmental disabilities, and mental health challenges—including clinical roles at <strong className="text-gray-900">Duke University Hospital</strong>, a <strong className="text-gray-900">Harvard Medical School Affiliate Hospital</strong>, and a <strong className="text-gray-900">World Health Organization Collaborating Center</strong>.
-                                    </p>
-                                    <p>
-                                        Kala is dedicated to serving the Raleigh community with a focus on compassion, understanding, and the belief that the people most often overlooked deserve not just services, but to be genuinely seen and heard.
+                                        She is dedicated to serving the Raleigh community with a focus on compassion, understanding, and the belief that people who are often overlooked deserve not just services, but to be genuinely seen and heard.
                                     </p>
                                 </div>
                             </div>
@@ -119,7 +116,7 @@ const MissionSection: React.FC = () => {
                                     </div>
                                     <div className="flex items-start gap-3">
                                         <div className="w-2 h-2 rounded-full bg-[#332885] mt-2.5 shrink-0"></div>
-                                        <p className="text-gray-700 font-bold leading-tight">World Health Organization Collaborating Center</p>
+                                        <p className="text-gray-700 font-bold leading-tight">International Fellowship of Evangelical Students</p>
                                     </div>
                                     <div className="flex items-start gap-3">
                                         <div className="w-2 h-2 rounded-full bg-[#332885] mt-2.5 shrink-0"></div>
@@ -145,7 +142,7 @@ const MissionSection: React.FC = () => {
                                     </div>
                                     <div className="flex items-center gap-4 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 group hover:border-[#332885] transition-all">
                                         <Award className="w-8 h-8 text-gray-400 group-hover:text-[#332885] transition-colors" />
-                                        <p className="text-gray-700 font-bold italic">100 Top Global Inclusion Leaders, 2026</p>
+                                        <p className="text-gray-700 font-bold italic">Autism Today 100 Top Global Inclusion Leaders, 2026</p>
                                     </div>
                                 </div>
                             </div>

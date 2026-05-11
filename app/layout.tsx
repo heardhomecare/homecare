@@ -9,17 +9,19 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://heardhomecare.com'),
   title: {
-    default: 'Heard Home Care • Trusted Senior Home Care',
+    default: 'Heard Home Care • Trusted Senior Home Care in North Carolina',
     template: '%s • Heard Home Care',
   },
-  description: 'Compassionate and professional senior home care services in Central and Eastern North Carolina.',
+  description: 'Compassionate and professional senior home care services in Central and Eastern North Carolina. We provide personalized care giving that empowers seniors to live with dignity.',
+  keywords: ['Senior Home Care', 'Elderly Care NC', 'Home Health Raleigh', 'Compassionate Caregivers', 'Senior Assistance', 'Central North Carolina Home Care'],
   icons: {
     icon: '/Asset6.png',
   },
   openGraph: {
     title: 'Heard Home Care • Trusted Senior Home Care',
-    description: 'Compassionate and professional senior home care services in Central and Eastern North Carolina.',
+    description: 'Compassionate and professional senior home care services in North Carolina.',
     url: 'https://heardhomecare.com',
     siteName: 'Heard Home Care',
     images: [
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Heard Home Care • Trusted Senior Home Care',
-    description: 'Compassionate and professional senior home care services in Central and Eastern North Carolina.',
+    description: 'Compassionate and professional senior home care services in North Carolina.',
     images: ['/logo-vertical-purple.png'],
   },
 }

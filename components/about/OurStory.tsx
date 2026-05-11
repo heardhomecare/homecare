@@ -16,16 +16,16 @@ const OurStory: React.FC = () => {
                     
                     <div className="space-y-6 text-lg text-gray-700 leading-relaxed italic">
                         <p>
-                            I&apos;m Kala Allen Omeiza, and my journey into home care is deeply personal. It did not come from a boardroom; it came from a hospital bed. After giving birth, I experienced an amniotic fluid embolism—a condition that is mostly fatal. I survived, and then had to relearn how to walk and communicate.
+                            In 2018, Kala Omeiza founded the national nonprofit I’m Heard to combat mental health stigma in underserved communities. Since then, she has authored three books and spoken internationally on mental health, culture, and the importance of breaking silence around emotional wellbeing. Her advocacy continues to shape her broader mission of dignity, access, and compassionate support.
                         </p>
                         <p>
-                            In doing so, I discovered firsthand how difficult it is to accept care—and how transformative the right care can be when it finally arrives. <strong className="text-[#332885] font-bold">&quot;It wasn&apos;t easy to accept friendly care, but it was worth it.&quot;</strong>
+                            After surviving a postpartum condition that is often fatal for mothers, Kala experienced firsthand how difficult it can be to accept care—and how life-changing the right support can be when it finally arrives. That experience, along with years of witnessing loved ones transition from independence to needing daily assistance, became the foundation for her work in home care.
                         </p>
                         <p>
-                            That experience, layered with years of watching my own relatives navigate the transition from independence to needing daily support, became the emotional backbone of Heard Home Care. We understand the vulnerability and the need to feel seen that comes with accepting support in the home.
+                            Building on this journey, she launched Heard Home Care to provide high-quality, compassionate support for older adults and individuals with disabilities. Her work is rooted in the belief that care should preserve dignity, foster trust, and ensure every person feels seen and heard.
                         </p>
                         <p>
-                            As we grow our family in Raleigh, North Carolina, we prioritize instilling values of compassion, understanding, and dignity. These principles shape our approach to serving our clients and ensuring that every family we touch feels genuinely heard.
+                            Based in Raleigh, North Carolina, Kala and her family are committed to embedding values of compassion and understanding into the care they provide to the community.
                         </p>
                     </div>
                 </div>

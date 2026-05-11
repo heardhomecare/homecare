@@ -9,23 +9,27 @@ export default function AdminDashboard() {
     blogs: 0,
     jobs: 0,
     staff: 0,
-    testimonials: 0
+    testimonials: 0,
+    contacts: 0
   })
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     async function fetchStats() {
       try {
-        const [blogRes, jobRes] = await Promise.all([
+        const [blogRes, jobRes, contactRes] = await Promise.all([
           fetch('/api/blogs'),
-          fetch('/api/careers')
+          fetch('/api/careers'),
+          fetch('/api/admin/contacts')
         ])
         const blogs = await blogRes.json()
         const jobs = await jobRes.json()
+        const contacts = await contactRes.json()
         setStats(prev => ({
           ...prev,
-          blogs: blogs.length || 0,
-          jobs: jobs.length || 0
+          blogs: Array.isArray(blogs) ? blogs.length : 0,
+          jobs: Array.isArray(jobs) ? jobs.length : 0,
+          contacts: Array.isArray(contacts) ? contacts.length : 0
         }))
       } catch (error) {
         console.error('Failed to fetch stats')
@@ -56,10 +60,13 @@ export default function AdminDashboard() {
       href: '/admin/staff',
     },
     {
-      title: 'Team Invites',
-      description: 'Manage admin access and invites',
-      icon: <Users size={32} />,
       href: '/admin/team',
+    },
+    {
+      title: 'Contact Leads',
+      description: 'View and export contact form submissions',
+      icon: <MessageSquare size={32} />,
+      href: '/admin/contacts',
     }
   ]
 
@@ -71,7 +78,7 @@ export default function AdminDashboard() {
             { label: 'Total Posts', value: stats.blogs, icon: <FileText size={18} /> },
             { label: 'Job Openings', value: stats.jobs, icon: <Briefcase size={18} /> },
             { label: 'Staff Members', value: stats.staff, icon: <Users size={18} /> },
-            { label: 'Testimonials', value: stats.testimonials, icon: <MessageSquare size={18} /> },
+            { label: 'Contact Leads', value: stats.contacts, icon: <MessageSquare size={18} /> },
           ].map((stat) => (
             <div key={stat.label} className="bg-white rounded-3xl border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 group">
               <div className="flex items-center gap-3 mb-6 text-[#332885]/40 group-hover:text-[#332885] transition-colors">

@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { motion, Variants } from 'framer-motion';
 
 export default function MeaningfulConnections() {
   const items = [
@@ -9,22 +12,54 @@ export default function MeaningfulConnections() {
     { name: 'Valued care professionals', icon: '/wp-content/uploads/2024/10/icon-valued-care-professionals.png' },
   ];
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+
   return (
-    <section className="bg-[var(--brand-green)] py-20 md:py-32 text-white overflow-hidden">
+    <section className="bg-(--brand-green) py-20 md:py-32 text-white overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1400px]">
-        <div className="text-center space-y-8 mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center space-y-8 mb-20"
+        >
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-serif font-bold leading-tight tracking-tight">
-            It’s Not Just Care. It’s Making <mark className="kt-highlight text-[var(--brand-black)] !text-inherit text-4xl md:text-6xl lg:text-7xl">Personal</mark> Connections.
+            It’s Not Just Care. It’s Making <mark className="kt-highlight text-(--brand-black) text-inherit! text-4xl md:text-6xl lg:text-7xl">Personal</mark> Connections.
           </h2>
 
           <p className="text-lg opacity-90 leading-relaxed max-w-4xl mx-auto">
-            We believe that true care goes beyond tasks—it’s about fostering meaningful relationships. We address each client’s unique needs by delivering elevated care centered around:
+            We believe true care goes beyond everyday tasks—it’s about building meaningful relationships. We address each client’s unique needs by providing elevated care centered on:
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-8"
+        >
           {items.map((item) => (
-            <div key={item.name} className="flex flex-col items-center text-center space-y-6 group">
+            <motion.div 
+              key={item.name} 
+              variants={itemVariants}
+              className="flex flex-col items-center text-center space-y-6 group"
+            >
               <div className="transform transition-transform duration-500 group-hover:scale-110">
                 <img
                   src={item.icon}
@@ -35,9 +70,9 @@ export default function MeaningfulConnections() {
               <p className="text-sm font-bold uppercase tracking-[0.2em] leading-snug max-w-[180px]">
                 {item.name}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

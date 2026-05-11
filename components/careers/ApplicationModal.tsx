@@ -22,14 +22,27 @@ export default function ApplicationModal({ isOpen, onClose, jobTitle }: Applicat
 
   if (!isOpen) return null
 
+  const formatPhoneNumber = (value: string) => {
+    const phone = value.replace(/\D/g, '');
+    if (phone.length <= 3) return phone;
+    if (phone.length <= 6) return `(${phone.slice(0, 3)}) ${phone.slice(3)}`;
+    return `(${phone.slice(0, 3)}) ${phone.slice(3, 6)}-${phone.slice(6, 10)}`;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    if (name === 'phone') {
+      setFormData(prev => ({ ...prev, [name]: formatPhoneNumber(value) }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
 
     try {
-      // In a real app, we might have /api/careers/apply
-      // For now, we can use a generic notification or just log it
-      // I'll create a simple API route for this below
       const res = await fetch('/api/careers/apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -38,6 +51,7 @@ export default function ApplicationModal({ isOpen, onClose, jobTitle }: Applicat
 
       if (res.ok) {
         toast.success('Application submitted successfully! We will be in touch.')
+        setFormData({ name: '', email: '', phone: '', experience: '', message: '' });
         onClose()
       } else {
         toast.error('Failed to submit application. Please try again.')
@@ -70,9 +84,10 @@ export default function ApplicationModal({ isOpen, onClose, jobTitle }: Applicat
               <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Full Name</label>
               <input
                 type="text"
+                name="name"
                 required
                 value={formData.name}
-                onChange={(e) => setFormData({...formData, name: e.target.value})}
+                onChange={handleChange}
                 className="w-full px-6 py-4 rounded-2xl border border-gray-100 focus:border-[#332885] outline-none transition-all bg-gray-50/50"
                 placeholder="John Doe"
               />
@@ -81,9 +96,10 @@ export default function ApplicationModal({ isOpen, onClose, jobTitle }: Applicat
               <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Email Address</label>
               <input
                 type="email"
+                name="email"
                 required
                 value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                onChange={handleChange}
                 className="w-full px-6 py-4 rounded-2xl border border-gray-100 focus:border-[#332885] outline-none transition-all bg-gray-50/50"
                 placeholder="john@example.com"
               />
@@ -95,9 +111,10 @@ export default function ApplicationModal({ isOpen, onClose, jobTitle }: Applicat
               <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Phone Number</label>
               <input
                 type="tel"
+                name="phone"
                 required
                 value={formData.phone}
-                onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                onChange={handleChange}
                 className="w-full px-6 py-4 rounded-2xl border border-gray-100 focus:border-[#332885] outline-none transition-all bg-gray-50/50"
                 placeholder="(919) 000-0000"
               />
@@ -106,9 +123,10 @@ export default function ApplicationModal({ isOpen, onClose, jobTitle }: Applicat
               <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Years of Experience</label>
               <input
                 type="number"
+                name="experience"
                 required
                 value={formData.experience}
-                onChange={(e) => setFormData({...formData, experience: e.target.value})}
+                onChange={handleChange}
                 className="w-full px-6 py-4 rounded-2xl border border-gray-100 focus:border-[#332885] outline-none transition-all bg-gray-50/50"
                 placeholder="e.g. 5"
               />
@@ -118,10 +136,11 @@ export default function ApplicationModal({ isOpen, onClose, jobTitle }: Applicat
           <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Why are you a good fit?</label>
             <textarea
+              name="message"
               required
               rows={4}
               value={formData.message}
-              onChange={(e) => setFormData({...formData, message: e.target.value})}
+              onChange={handleChange}
               className="w-full px-6 py-4 rounded-2xl border border-gray-100 focus:border-[#332885] outline-none transition-all bg-gray-50/50 resize-none"
               placeholder="Tell us about your background and passion for caregiving..."
             />

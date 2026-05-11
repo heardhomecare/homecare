@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
+import { toast } from 'sonner';
+import { Loader2 } from 'lucide-react';
 
 const ContactFormSection: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -29,7 +31,7 @@ const ContactFormSection: React.FC = () => {
             });
 
             if (response.ok) {
-                alert('Thank you for your message. Our team will contact you soon!');
+                toast.success('Thank you for your message. Our team will contact you soon!');
                 setFormData({
                     name: '',
                     email: '',
@@ -41,19 +43,36 @@ const ContactFormSection: React.FC = () => {
                 });
             } else {
                 const data = await response.json();
-                alert(data.message || 'Something went wrong. Please try again.');
+                toast.error(data.message || 'Something went wrong. Please try again.');
             }
         } catch (error) {
-            alert('Failed to send message. Please check your connection.');
+            toast.error('Failed to send message. Please check your connection.');
         } finally {
             setIsLoading(false);
         }
     };
 
+    const formatPhoneNumber = (value: string) => {
+        if (!value) return value;
+        const phoneNumber = value.replace(/[^\d]/g, '');
+        const phoneNumberLength = phoneNumber.length;
+        if (phoneNumberLength < 4) return phoneNumber;
+        if (phoneNumberLength < 7) {
+            return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+        }
+        return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+    };
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value, type } = e.target as HTMLInputElement;
         const val = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
-        setFormData({ ...formData, [name]: val });
+        
+        if (name === 'phone' && typeof val === 'string') {
+            const formattedValue = formatPhoneNumber(val);
+            setFormData({ ...formData, [name]: formattedValue });
+        } else {
+            setFormData({ ...formData, [name]: val });
+        }
     };
 
     return (
@@ -126,6 +145,7 @@ const ContactFormSection: React.FC = () => {
                                     name="name"
                                     required
                                     placeholder="Name*"
+                                    value={formData.name}
                                     onChange={handleChange}
                                     className="w-full border-2 border-gray-300 rounded-md px-4 py-3 text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#332885] placeholder:text-gray-400"
                                 />
@@ -136,6 +156,7 @@ const ContactFormSection: React.FC = () => {
                                         name="email"
                                         required
                                         placeholder="Email address*"
+                                        value={formData.email}
                                         onChange={handleChange}
                                         className="w-full border-2 border-gray-300 rounded-md px-4 py-3 text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#332885] placeholder:text-gray-400"
                                     />
@@ -144,6 +165,7 @@ const ContactFormSection: React.FC = () => {
                                         name="phone"
                                         required
                                         placeholder="Phone*"
+                                        value={formData.phone}
                                         onChange={handleChange}
                                         className="w-full border-2 border-gray-300 rounded-md px-4 py-3 text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#332885] placeholder:text-gray-400"
                                     />
@@ -154,6 +176,7 @@ const ContactFormSection: React.FC = () => {
                                     name="city"
                                     placeholder="City*"
                                     required
+                                    value={formData.city}
                                     onChange={handleChange}
                                     className="w-full border-2 border-gray-300 rounded-md px-4 py-3 text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#332885] placeholder:text-gray-400"
                                 />
@@ -162,6 +185,7 @@ const ContactFormSection: React.FC = () => {
                                     type="text" 
                                     name="source"
                                     placeholder="How did you hear about us?"
+                                    value={formData.source}
                                     onChange={handleChange}
                                     className="w-full border-2 border-gray-300 rounded-md px-4 py-3 text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#332885] placeholder:text-gray-400"
                                 />
@@ -170,6 +194,7 @@ const ContactFormSection: React.FC = () => {
                                     name="message"
                                     placeholder="How can we serve you?"
                                     rows={4}
+                                    value={formData.message}
                                     onChange={handleChange}
                                     className="w-full border-2 border-gray-300 rounded-md px-4 py-3 text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#332885] placeholder:text-gray-400"
                                 ></textarea>
@@ -192,9 +217,14 @@ const ContactFormSection: React.FC = () => {
                                     <button 
                                         type="submit"
                                         disabled={isLoading}
-                                        className="w-full bg-[#332885] hover:bg-black text-white font-bold py-4 rounded-md transition-all duration-300 uppercase tracking-widest text-sm shadow-md disabled:opacity-70 disabled:cursor-not-allowed"
+                                        className="w-full bg-[#332885] hover:bg-black text-white font-bold py-4 rounded-md transition-all duration-300 uppercase tracking-widest text-sm shadow-md disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center gap-2"
                                     >
-                                        {isLoading ? 'Sending...' : 'Submit'}
+                                        {isLoading ? (
+                                            <>
+                                                <Loader2 className="animate-spin" size={18} />
+                                                Sending...
+                                            </>
+                                        ) : 'Submit'}
                                     </button>
                                 </div>
                             </form>
@@ -208,3 +238,4 @@ const ContactFormSection: React.FC = () => {
 };
 
 export default ContactFormSection;
+

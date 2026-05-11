@@ -48,8 +48,8 @@ export default function Footer() {
           <div className="flex flex-col items-center text-center">
             <h3 className="font-semibold text-base mb-3">Contact</h3>
             <ul className="space-y-2 text-sm">
-              <li>(555) 123-4567</li>
-              <li>info@heard.care</li>
+              <li>(919) 659-5991</li>
+              <li>team@heardhome.com</li>
               <li className="pt-2">
                 <a href="/auth/login" className="inline-block w-full bg-[#332885] hover:bg-[#2a2375] text-white px-6 py-2 rounded-lg font-medium transition-colors text-center">
                   Login
@@ -89,8 +89,8 @@ export default function Footer() {
               <div>
                 <h3 className="font-semibold text-lg mb-4">Contact</h3>
                 <ul className="space-y-2">
-                  <li>(555) 123-4567</li>
-                  <li>info@heard.care</li>
+                  <li>(919) 659-5991</li>
+                  <li>team@heardhome.com</li>
                   <li className="pt-2">
                     <a href="/auth/login" className="inline-block w-full bg-[#332885] hover:bg-[#2a2375] text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors text-center">
                       Login
@@ -108,7 +108,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 text-sm text-gray-400 -mt-2">
           <div className="flex flex-col items-center md:items-start w-full md:flex-1">
             <span>&copy; {new Date().getFullYear()} HEARD Home Care</span>
-            <span className="text-xs mt-1">123 Care Avenue, Your City, State</span>
+            <span className="text-xs mt-1">150 North Wiget Lane STE 100, Walnut Creek, CA 94598</span>
           </div>
           {/* Terms + Back to top: row on mobile, separate on desktop */}
           <div className="flex items-center justify-between w-full md:contents gap-6 text-sm text-gray-400">

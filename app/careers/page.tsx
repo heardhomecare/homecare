@@ -5,8 +5,8 @@ import CareersTopLogo from '@/components/careers/CareersTopLogo';
 import CareersHeroContent from '@/components/careers/CareersHeroContent';
 
 export const metadata = {
-  title: 'Join Our Team • Careers at Heard Home Care',
-  description: 'Apply today to join our team of compassionate caregivers and make a difference in the lives of seniors.',
+  title: 'Join Our Caregiving Team',
+  description: 'Make a meaningful difference. Explore career opportunities at Heard Home Care and join a team that values and empowers its caregivers as the heart of our mission.',
 };
 
 const CareersPage = () => {

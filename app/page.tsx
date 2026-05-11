@@ -1,4 +1,10 @@
 import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Heard Home Care • Boutique Senior Care in Raleigh, NC',
+  description: 'Experience elevated senior home care. We build meaningful relationships while providing dignified, personalized support for families in Raleigh and across North Carolina.',
+};
+
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/home/Hero';

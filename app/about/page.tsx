@@ -9,8 +9,8 @@ import TeamSection from '@/components/about/TeamSection';
 import AboutGetStartedSection from '@/components/about/AboutGetStartedSection';
 
 export const metadata = {
-  title: 'About Heard Home Care • Senior Home Care Services',
-  description: 'Learn more about Heard Home Care and our dedication to providing compassionate, personalized care for seniors in Raleigh, North Carolina.',
+  title: 'About Our Mission and Team',
+  description: 'Discover the heart behind Heard Home Care. Led by Kala Omeiza, we are dedicated to providing boutique, relationship-based senior care in Raleigh and the surrounding Triangle area.',
 };
 
 const AboutPage = () => {

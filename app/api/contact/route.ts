@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import Contact from '@/models/Contact';
-import { sendContactEmail } from '@/lib/mail';
+import { sendContactEmail, sendAutoReplyEmail } from '@/lib/mail';
 
 export async function POST(req: Request) {
   try {
@@ -27,8 +27,11 @@ export async function POST(req: Request) {
       textOptIn,
     });
 
-    // Send notification email
+    // Send notification email to team
     await sendContactEmail(body);
+
+    // Send auto-reply to user
+    await sendAutoReplyEmail(body);
 
     return NextResponse.json(
       { message: 'Message sent successfully', id: contact._id },

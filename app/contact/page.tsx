@@ -5,8 +5,8 @@ import ContactHero from '@/components/contact/ContactHero';
 import ContactFormSection from '@/components/contact/ContactFormSection';
 
 export const metadata = {
-  title: 'Contact Us • Heard Home Care',
-  description: 'Contact us today to learn more about our senior home care services and how we can help you or your loved one.',
+  title: 'Contact Us for a Consultation',
+  description: 'Ready to start your journey with boutique home care? Contact the Heard Home Care team today for a personalized consultation in the Raleigh area.',
 };
 
 const ContactPage = () => {

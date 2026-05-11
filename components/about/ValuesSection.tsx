@@ -19,7 +19,7 @@ const ValuesSection: React.FC = () => {
                         </h2>
 
                         <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic max-w-5xl mx-auto">
-                            "We are on a mission to be the leading provider of premium home care, where our dedicated care professionals are celebrated and empowered, fostering an environment of service excellence for our clients. Together, we Heard lives—those we serve and those we employ—creating a community anchored in respect, empathy, and unwavering commitment to outstanding care. Our purpose is to elevate caregiving, transforming challenges into cherished moments of connection and joy."
+                            "We are committed to becoming a leading provider of premium home care, where care professionals are valued, supported, and empowered to deliver exceptional service. Together, we hear the needs of both those we serve and those we employ, building a community rooted in respect, empathy, and a deep commitment to quality care. Our mission is to elevate the caregiving experience by turning everyday challenges into meaningful moments of connection, dignity, and joy."
                         </p>
                     </div>
                 </div>
