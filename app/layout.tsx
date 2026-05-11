@@ -15,9 +15,11 @@ export const metadata: Metadata = {
     template: '%s • Heard Home Care',
   },
   description: 'Compassionate and professional senior home care services in Central and Eastern North Carolina. We provide personalized care giving that empowers seniors to live with dignity.',
-  keywords: ['Senior Home Care', 'Elderly Care NC', 'Home Health Raleigh', 'Compassionate Caregivers', 'Senior Assistance', 'Central North Carolina Home Care'],
+  keywords: ['Senior Home Care', 'Elderly Care NC', 'Home Health Raleigh', 'Compassionate Caregivers', 'Senior Assistance', 'Central North Carolina Home Care', 'home care nc', 'home care raleigh nc', 'home care durham nc', 'home care fayetteville nc', 'home care greensboro nc', 'home', 'home care', 'home health', 'home health care', 'home health aide', 'home health aide jobs', 'home health aide training', 'home health aide certification', 'home health aide requirements', 'home health aide salary', 'home health aide jobs near me', 'home health aide training near me', 'home health aide certification near me', 'home health aide requirements near me', 'home health aide salary near me', 'heard home', 'heard home care'],
   icons: {
-    icon: '/Asset6.png',
+    icon: '/Asset5.png',
+    shortcut: '/Asset5.png',
+    apple: '/Asset5.png',
   },
   openGraph: {
     title: 'Heard Home Care • Trusted Senior Home Care',
