@@ -4,7 +4,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const SENDER_EMAIL = process.env.SENDER_EMAIL || 'onboarding@resend.dev';
 const CONTACT_RECIPIENT = process.env.CONTACT_RECIPIENT_EMAIL || 'team@heardhome.com';
 
-const BASE_URL = process.env.NEXTAUTH_URL || 'https://heardhomecare.com';
+const BASE_URL = process.env.NEXTAUTH_URL || 'https://www.heardhome.com';
 
 const EMAIL_STYLE = `
   <style>

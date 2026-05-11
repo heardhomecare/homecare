@@ -9,7 +9,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://heardhomecare.com'),
+  metadataBase: new URL('https://www.heardhome.com'),
   title: {
     default: 'Heard Home Care • Trusted Senior Home Care in North Carolina',
     template: '%s • Heard Home Care',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Heard Home Care • Trusted Senior Home Care',
     description: 'Compassionate and professional senior home care services in North Carolina.',
-    url: 'https://heardhomecare.com',
+    url: 'https://www.heardhome.com',
     siteName: 'Heard Home Care',
     images: [
       {

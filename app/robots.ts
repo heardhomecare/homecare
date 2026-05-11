@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/admin/', '/api/'],
     },
-    sitemap: 'https://heardhomecare.com/sitemap.xml',
+    sitemap: 'https://www.heardhome.com/sitemap.xml',
   }
 }
