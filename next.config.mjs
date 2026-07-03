@@ -9,6 +9,21 @@ const nextConfig = {
   turbopack: {
     root: '.',
   },
+  async redirects() {
+    return [
+      // Old WordPress /blog/* URLs (removed posts) → current blogs page
+      {
+        source: '/blog/:path*',
+        destination: '/blogs',
+        permanent: true,
+      },
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig

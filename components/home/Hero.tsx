@@ -88,7 +88,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-sm md:text-base text-(--brand-black) leading-relaxed w-full max-w-5xl mx-auto font-medium px-1 md:px-0"
             >
-              Our care team is the heart and soul of our agency. As a people-centered agency, we prioritize empowering our caregivers so they can provide outstanding care to our clients and their families throughout the Triangle area.
+              Heard Home Care is the premier home care agency because our care team is the heart of everything we do. As a people-centered organization, we empower our caregivers to deliver exceptional care to clients and families across the Triangle.
             </motion.p>
           </div>
 
