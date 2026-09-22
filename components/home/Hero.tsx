@@ -88,7 +88,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-sm md:text-base text-(--brand-black) leading-relaxed w-full max-w-5xl mx-auto font-medium px-1 md:px-0"
             >
-              At Heard Home Care, we take the time to select and support compassionate caregivers who share our commitment to exceptional care, so you and your loved ones can experience personalized care, comfort, and peace of mind throughout the Triangle area.
+              At Heard Home Care, we take the time to welcome and support compassionate caregivers who share our commitment to exceptional care, so you and your loved ones can experience personalized care, comfort, and peace of mind throughout the Triangle area.
             </motion.p>
           </div>
 
