@@ -79,7 +79,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-(--brand-black) leading-tight tracking-tight px-2 md:px-0"
             >
-              Exceptional care begins with caregivers who feel valued and supported in their calling.
+              Exceptional care begins with exceptional caregivers.
             </motion.h1>
 
             <motion.p 
@@ -88,7 +88,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-sm md:text-base text-(--brand-black) leading-relaxed w-full max-w-5xl mx-auto font-medium px-1 md:px-0"
             >
-              Heard Home Care is the premier home care agency because our care team is the heart of everything we do. As a people-centered organization, we empower our caregivers to deliver exceptional care to clients and families across the Triangle.
+              At Heard Home Care, we take the time to select and support compassionate caregivers who share our commitment to exceptional care, so you and your loved ones can experience personalized care, comfort, and peace of mind throughout the Triangle area.
             </motion.p>
           </div>
 
