@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -53,7 +53,7 @@ export default function Footer() {
 
             <div className="flex items-center space-x-2.5 pt-2">
               <a
-                href="https://www.facebook.com/profile.php?id=61567054131455"
+                href="https://www.facebook.com/profile.php?id=61570783980529"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#3D3D6B] p-2.5 rounded-none hover:bg-white hover:text-[#332885] transition-all"
@@ -62,7 +62,7 @@ export default function Footer() {
                 <Facebook className="w-5 h-5 fill-current" />
               </a>
               <a
-                href="https://www.instagram.com/heard_homecare/"
+                href="https://www.instagram.com/heard.homecare/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#3D3D6B] p-2.5 rounded-none hover:bg-white hover:text-[#332885] transition-all"
@@ -71,7 +71,16 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://www.linkedin.com/company/heard-home-care-walnut-creek/"
+                href="https://www.youtube.com/channel/UC4QzBmgbtGnf_U_6osgbYZw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#3D3D6B] p-2.5 rounded-none hover:bg-white hover:text-[#332885] transition-all"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/heard-home-care-llc/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#3D3D6B] p-2.5 rounded-none hover:bg-white hover:text-[#332885] transition-all"
